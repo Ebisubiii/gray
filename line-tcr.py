@@ -487,29 +487,29 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
-		if msg.toType == 2:
-                    X= cl.getGroup(msg.to)
+		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
+                    X= cl.getGroup(msg.from)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv1 gn " in msg.text):
-		if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+		iif msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
+                    X = cl.getGroup(msg.from)
                     X.name = msg.text.replace("Cv1 gn ","")
                     ki.updateGroup(X)
                 else:
                     ki.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv2 gn " in msg.text):
-		if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
+                    X = cl.getGroup(msg.from)
                     X.name = msg.text.replace("Cv2 gn ","")
                     kk.updateGroup(X)
                 else:
                     kk.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv3 gn " in msg.text):
-		if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
+                    X = cl.getGroup(msg.from)
                     X.name = msg.text.replace("Cv3 gn ","")
                     kc.updateGroup(X)
                 else:
@@ -608,7 +608,7 @@ def bot(op):
                 kc.sendMessage(msg)
             elif msg.text in ["cancel","Cancel"]:
 		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.to)
+                    X = cl.getGroup(msg.from)
                     if X.invitee is not None:
                         gInviMids = [contact.mid for contact in X.invitee]
                         cl.cancelGroupInvitation(msg.to, gInviMids)
@@ -624,35 +624,35 @@ def bot(op):
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv cancel","Bot cancel"]:
 		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    G = k3.getGroup(msg.to)
+                    G = k3.getGroup(msg.from)
                     if G.invitee is not None:
                         gInviMids = [contact.mid for contact in G.invitee]
                         k3.cancelGroupInvitation(msg.to, gInviMids)
                     else:
                         if wait["lang"] == "JP":
-                            k3.sendText(msg.to,"No one is inviting")
+                            k3.sendText(msg.text,"No one is inviting")
                         else:
-                            k3.sendText(msg.to,"Sorry, nobody absent")
+                            k3.sendText(msg.text,"Sorry, nobody absent")
                 else:
                     if wait["lang"] == "JP":
-                        k3.sendText(msg.to,"Can not be used outside the group")
+                        k3.sendText(msg.text,"Can not be used outside the group")
                     else:
-                        k3.sendText(msg.to,"Not for use less than group")
+                        k3.sendText(msg.text,"Not for use less than group")
             #elif "gurl" == msg.text:
                 #print cl.getGroup(msg.to)
                 ##cl.sendMessage(msg)
             elif msg.text in ["Ourl","Link on"]:
 		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.to)
+                    X = cl.getGroup(msg.from)
                     X.preventJoinByTicket = False
                     cl.updateGroup(X)
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Done")
+                        cl.sendText(msg.text,"Done")
                     else:
-                        cl.sendText(msg.to,"already open")
+                        cl.sendText(msg.text,"already open")
                 else:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
+                        cl.sendText(msg.text,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv1 ourl","Cv1 link on"]:
