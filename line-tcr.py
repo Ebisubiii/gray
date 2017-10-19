@@ -487,14 +487,14 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
-		if msg.toType == 2:
-                    X= cl.getGroup(msg.to)
+		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
+                    X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv1 gn " in msg.text):
-		if msg.toType == 2:
+		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Cv1 gn ","")
                     ki.updateGroup(X)
