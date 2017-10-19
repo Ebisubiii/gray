@@ -487,29 +487,29 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
-		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X= cl.getGroup(msg.from)
+		if msg.toType == 2:
+                    X= cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv1 gn " in msg.text):
-		iif msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.from)
+		if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Cv1 gn ","")
                     ki.updateGroup(X)
                 else:
                     ki.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv2 gn " in msg.text):
-		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.from)
+		if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Cv2 gn ","")
                     kk.updateGroup(X)
                 else:
                     kk.sendText(msg.to,"It can't be used besides the group.")
             elif ("Cv3 gn " in msg.text):
-		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.from)
+		if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Cv3 gn ","")
                     kc.updateGroup(X)
                 else:
@@ -607,8 +607,8 @@ def bot(op):
                 kk.sendMessage(msg)
                 kc.sendMessage(msg)
             elif msg.text in ["cancel","Cancel"]:
-		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.from)
+		if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
                     if X.invitee is not None:
                         gInviMids = [contact.mid for contact in X.invitee]
                         cl.cancelGroupInvitation(msg.to, gInviMids)
@@ -657,8 +657,8 @@ def bot(op):
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv1 ourl","Cv1 link on"]:
 		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X = cl.getGroup(msg.to)
-                    X.preventJoinByTicket = False
+                     a= cl.getGroup(msg.from)
+                    a.preventJoinByTicket = False
                     ki.updateGroup(X)
                     if wait["lang"] == "JP":
                         ki.sendText(msg.to,"Done Chivas")
