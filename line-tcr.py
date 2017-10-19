@@ -488,8 +488,8 @@ def bot(op):
                     cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
 		if msg.from_ in admin:u2b457b1ef8391ee451c9a22c835e1e33
-                    X= cl.getGroup(msg.from)
-                    X.name = msg.text.replace("Gn ","")
+                    = cl.getGroup(msg.from)
+                    .name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
